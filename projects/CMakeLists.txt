@@ -5,5 +5,6 @@ project(kmms_prog_2023)
 add_subdirectory(npushkarev_bubble)
 add_subdirectory(bubble_sort_mf)
 add_subdirectory(refactoring)
+add_subdirectory(smartSort)
 
 set(CMAKE_SUPPRESS_REGENERATION true)
