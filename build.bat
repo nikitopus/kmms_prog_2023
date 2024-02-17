@@ -25,12 +25,14 @@ set arr[0].file=run_bubble.bat
 set arr[1].file=run_bubble_sort_mf.bat
 set arr[2].file=run_refactoring.bat
 set arr[3].file=run_smartSort.bat
+set arr[4].file=run_obuchaika.bat
 
 set arr[0].folder=npushkarev_bubble
 set arr[1].folder=bubble_sort_mf
 set arr[2].folder=refactoring
 set arr[3].folder=smartSort
+set arr[4].folder=obuchaika
 
-for /L %%i in (0,1,2,3) do ( 
+for /L %%i in (0,1,4) do ( 
 	copy ..\%SOURCE_FOLDER%\!arr[%%i].folder!\!arr[%%i].file! .\!arr[%%i].folder!
 )

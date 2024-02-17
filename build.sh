@@ -27,12 +27,14 @@ arr[0,file]=run_bubble.sh
 arr[1,file]=run_bubble_sort_mf.sh
 arr[2,file]=run_refactoring.sh
 arr[3,file]=run_smartSort.sh
+arr[4,file]=run_obuchaika.sh
 arr[0,folder]=npushkarev_bubble
 arr[1,folder]=bubble_sort_mf
 arr[2,folder]=refactoring
 arr[3,folder]=smartSort
+arr[4,folder]=obuchaika
 
 # Копирование файлов в цикле
-for i in {0..3}; do
+for i in {0..4}; do
     cp ../$SOURCE_FOLDER/${arr[$i,folder]}/${arr[$i,file]} ./${arr[$i,folder]}
 done

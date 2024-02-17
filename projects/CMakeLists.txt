@@ -6,5 +6,6 @@ add_subdirectory(npushkarev_bubble)
 add_subdirectory(bubble_sort_mf)
 add_subdirectory(refactoring)
 add_subdirectory(smartSort)
+add_subdirectory(obuchaika)
 
 set(CMAKE_SUPPRESS_REGENERATION true)
