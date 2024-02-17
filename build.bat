@@ -21,3 +21,4 @@ cmake -G %BUILD_TYPE% ..\%SOURCE_FOLDER%
 cmake --build .
 
 copy ..\%SOURCE_FOLDER%\npushkarev_bubble\run_bubble.bat .\npushkarev_bubble
+copy ..\%SOURCE_FOLDER%\bubble_sort_mf\run_bubble_sort_mf.bat .\bubble_sort_mf

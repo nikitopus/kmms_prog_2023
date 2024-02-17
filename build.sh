@@ -18,3 +18,4 @@ cmake -G $BUILD_TYPE ../$SOURCE_FOLDER
 cmake --build .
 
 cp ../$SOURCE_FOLDER/npushkarev_bubble/run_bubble.sh ./npushkarev_bubble
+cp ../$SOURCE_FOLDER/bubble_sort_mf/run_bubble_sort_mf.sh ./bubble_sort_mf
