@@ -25,10 +25,12 @@ cmake --build .
 declare -A arr
 arr[0,file]=run_bubble.sh
 arr[1,file]=run_bubble_sort_mf.sh
+arr[2,file]=run_refactoring.sh
 arr[0,folder]=npushkarev_bubble
 arr[1,folder]=bubble_sort_mf
+arr[2,folder]=refactoring
 
 # Копирование файлов в цикле
-for i in {0..1}; do
+for i in {0..2}; do
     cp ../$SOURCE_FOLDER/${arr[$i,folder]}/${arr[$i,file]} ./${arr[$i,folder]}
 done
