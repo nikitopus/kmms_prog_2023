@@ -36,3 +36,5 @@ set arr[4].folder=obuchaika
 for /L %%i in (0,1,4) do ( 
 	copy ..\%SOURCE_FOLDER%\!arr[%%i].folder!\!arr[%%i].file! .\!arr[%%i].folder!
 )
+
+copy ..\run_tests.bat .

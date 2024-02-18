@@ -38,3 +38,5 @@ arr[4,folder]=obuchaika
 for i in {0..4}; do
     cp ../$SOURCE_FOLDER/${arr[$i,folder]}/${arr[$i,file]} ./${arr[$i,folder]}
 done
+
+cp ../run_tests.sh .
