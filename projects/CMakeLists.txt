@@ -11,5 +11,6 @@ add_subdirectory(refactoring)
 add_subdirectory(smartSort)
 add_subdirectory(obuchaika)
 add_subdirectory(unit_test_example)
+add_subdirectory(scl)
 
 set(CMAKE_SUPPRESS_REGENERATION true)
