@@ -7,3 +7,5 @@ lib/
 .vscode/
 Testing/
 projects/scl/src/long_number/long_number.0.cpp
+projects/scl/src/long_number/long_number.1.cpp
+projects/scl/src/long_number/long_number.0.hpp

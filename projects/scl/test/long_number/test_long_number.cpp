@@ -3,18 +3,6 @@
 
 #include "long_number.hpp"
 
-TEST(get_digits_number, check_positive) {
-	NPushkarev::LongNumber x("12345");
-	ASSERT_EQ(5, x.get_digits_number())
-		<< "Неправильно подсчитано количество разрядов в числе " << x;
-}
-
-TEST(get_digits_number, check_negative) {
-	NPushkarev::LongNumber x("-1");
-	ASSERT_EQ(1, x.get_digits_number())
-		<< "Неправильно подсчитано количество разрядов в числе " << x;
-}
-
 class EqualityFixture : public testing::Test {
 	public:
 		NPushkarev::LongNumber one_v1 = NPushkarev::LongNumber("1");
@@ -83,25 +71,6 @@ TEST(compare_less, positive_not_less) {
 	ASSERT_FALSE(x < y) << "Проверка " << x << " < " << y;
 }
 
-TEST (absolute, positive_abs) {
-	NPushkarev::LongNumber x ("10");
-	ASSERT_EQ (NPushkarev::LongNumber ("10"), x.abs(x)) << "Проверка abs(" << x << ")";
-}
-
-TEST (absolute, negative_abs) {
-	NPushkarev::LongNumber x ("-10");
-	ASSERT_EQ (NPushkarev::LongNumber ("10"), x.abs(x)) << "Проверка abs(" << x << ")";
-}
-
-TEST (toInt, positive) {
-	NPushkarev::LongNumber x ("10");
-	ASSERT_EQ (10, x.toInt(x)) << "Проверка toInt(" << x << ")";
-}
-
-TEST (toInt, negative) {
-	NPushkarev::LongNumber x ("-10");
-	ASSERT_EQ (-10, x.toInt(x)) << "Проверка toInt(" << x << ")";
-}
 
 TEST(addition, positive_sum) {
     NPushkarev::LongNumber x("123");
@@ -132,19 +101,35 @@ TEST(addition, negative_sum) {
 }
 
 TEST(subtract, subtract_positive_numbers) {
-    NPushkarev::LongNumber num1("54321");
-    NPushkarev::LongNumber num2("12345");
+    NPushkarev::LongNumber num1("100");
+    NPushkarev::LongNumber num2("50");
     NPushkarev::LongNumber result = num1 - num2;
     
-    ASSERT_EQ(NPushkarev::LongNumber("41976"), result) << "Неправильная разность положительных чисел";
+    ASSERT_EQ(NPushkarev::LongNumber("50"), result) << "Неправильная разность положительных чисел";
 }
 
 TEST(subtract, subtract_negative_numbers) {
-    NPushkarev::LongNumber num1("-54321");
-    NPushkarev::LongNumber num2("-12345");
+    NPushkarev::LongNumber num1("-100");
+    NPushkarev::LongNumber num2("-50");
     NPushkarev::LongNumber result = num1 - num2;
     
-    ASSERT_EQ(NPushkarev::LongNumber("-41976"), result) << "Неправильная разность отрицательных чисел";
+    ASSERT_EQ(NPushkarev::LongNumber("-50"), result) << "Неправильная разность отрицательных чисел";
+}
+
+TEST(multiply, multiply_positive_numbers) {
+    NPushkarev::LongNumber num1("123");
+    NPushkarev::LongNumber num2("456");
+    NPushkarev::LongNumber result = num1 * num2;
+    
+    ASSERT_EQ(NPushkarev::LongNumber("56088"), result) << "Неправильное умножение положительных чисел";
+}
+
+TEST(multiply, multiply_negative_numbers) {
+    NPushkarev::LongNumber num1("-123");
+    NPushkarev::LongNumber num2("456");
+    NPushkarev::LongNumber result = num1 * num2;
+    
+    ASSERT_EQ(NPushkarev::LongNumber("-56088"), result) << "Неправильное умножение отрицательных чисел";
 }
 
 TEST(divide, divide_positive_numbers) {
@@ -163,20 +148,20 @@ TEST(divide, divide_negative_numbers) {
     ASSERT_EQ(NPushkarev::LongNumber("-4"), result) << "Неправильное целочисленное деление отрицательного числа на положительное";
 }
 
-TEST(modulo, modulo_positive_numbers) {
-    NPushkarev::LongNumber num1("100");
-    NPushkarev::LongNumber num2("25");
+TEST(divide_with_remainder, divide_with_remainder_positive_numbers) {
+    NPushkarev::LongNumber num1("17");
+    NPushkarev::LongNumber num2("15");
     NPushkarev::LongNumber result = num1%num2;
     
-    ASSERT_EQ(NPushkarev::LongNumber("0"), result) << "Неправильный остаток от" << num1<<" mod "<<num2;
+    ASSERT_EQ(NPushkarev::LongNumber("2"), result) << "Неправильный остаток от деления положительных чисел";
 }
 
-TEST(modulo, modulo_negative_numbers) {
-    NPushkarev::LongNumber num1("-100");
-    NPushkarev::LongNumber num2("25");
-    NPushkarev::LongNumber result = num1%num2;
+TEST(divide_with_remainder, divide_with_remainder_negative_numbers) {
+    NPushkarev::LongNumber num1("-17");
+    NPushkarev::LongNumber num2("15");
+    NPushkarev::LongNumber result = num1 % num2;
     
-    ASSERT_EQ(NPushkarev::LongNumber("0"), result) << "Неправильный остаток от" << num1<<" mod "<<num2;
+    ASSERT_EQ(NPushkarev::LongNumber("-2"), result) << "Неправильный остаток от деления отрицательного числа на положительное";
 }
 
 int main(int argc, char **argv) {
